@@ -1,6 +1,8 @@
 import { Sparkles, Play } from "lucide-react";
+import { useI18n } from "../i18n/I18nProvider";
 
 export default function Hero() {
+  const { t } = useI18n()
   return (
     <section className="relative">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#f6faff,transparent_60%)]" />
@@ -10,18 +12,14 @@ export default function Hero() {
             <Sparkles className="h-4 w-4" />
             <span>Potenciado por IA avanzada</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-            Transforma el aprendizaje con inteligencia artificial
-          </h1>
-          <p className="text-slate-600 max-w-xl">
-            Una plataforma educativa que analiza el pensamiento crítico, ofrece retroalimentación personalizada y adapta las actividades según el estilo de cada estudiante.
-          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">{t('hero_title')}</h1>
+          <p className="text-slate-600 max-w-xl">{t('hero_sub')}</p>
           <div className="flex items-center gap-3">
-            <a href="#comenzar" className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-white font-medium shadow-md hover:bg-blue-700 transition-colors">
-              Empezar ahora
+            <a href="#comenzar" className="inline-flex items-center rounded-lg bg-gray-200 px-5 py-3 text-white font-medium shadow-md hover:bg-blue-700 transition-colors">
+              {t('hero_primary')}
             </a>
             <a href="#demo" className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-5 py-3 text-slate-700 font-medium hover:bg-slate-50 transition-colors">
-              <Play className="h-4 w-4" /> Ver demostración
+              <Play className="h-4 w-4" /> {t('hero_secondary')}
             </a>
           </div>
         </div>
@@ -29,7 +27,7 @@ export default function Hero() {
           <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md ring-1 ring-slate-200">
             <img
               className="h-full w-full object-cover"
-              src="https://images.unsplash.com/photo-1527430253228-e93688616381?q=80&w=1600&auto=format&fit=crop"
+              src="https://www.fundacionbankinter.org/wp-content/uploads/2025/04/ginevra-castellano-FTF-Embodied-AI.jpg"
               alt="Pantalla y teclado iluminados representando estudio nocturno"
             />
           </div>
